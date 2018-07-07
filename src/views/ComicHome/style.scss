@@ -3,6 +3,7 @@
 .comic-cover {
   border: 4px solid $black;
   width: 300px;
+  min-width: 300px;
   img {
     display: block;
     width: 100%;
@@ -15,4 +16,25 @@
   margin: 0;
   padding: 0px 21px 0px 24px;
   line-height: 52px;
+}
+
+.comic-detail-attrs {
+  margin: 16px 0 24px;
+  padding-left: 24px;
+  .flex {
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    width: 72px;
+  }
+  .rate i {
+    margin-right: 10px;
+  }
+}
+
+.comic-detail-summary {
+  padding-left: 24px;
+  p {
+    margin: 8px 0 24px;
+  }
 }
