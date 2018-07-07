@@ -1,0 +1,63 @@
+@import "variables.scss";
+
+* {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: $black;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 36px;
+  font-style: italic;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.title-2 {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.title-3 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.subtitle {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+p {
+  font-size: 16px;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 14px; 
+}
+
+.text-primary {
+  color: $color-primary;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  max-width: 620px;
+  min-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 24px;
+}
+
+.flex {
+  display: flex;
+}
