@@ -12,7 +12,7 @@ export default new Router({
       component: () => import(`${pageRoute}ComicHome`)
     },
     {
-      path: 'chapter/:cid/page/:pid',
+      path: '/chapter/:cid/page/:pid',
       name: 'page',
       component: () => import(`${pageRoute}ComicPage`)
     }
