@@ -4,14 +4,13 @@
 
   .page-header
     .header-title
-      .title-3 My Hexschool
+      router-link.title-3(to="/") My Hexschool
     .header-chapter.select
       select
-        option Chapter 1
-        option Chapter 2
+        option(v-for="chapter in chapters", :value="chapter.no", :key="chapter.no", :selected="cid===chapter.no") Chapter {{ chapter.no }}
     .header-page.select
       select
-        option Page 02
+        option chapter 
     .header-mode
       .toggle-group
         button(type="button")
@@ -20,30 +19,6 @@
   .page-thumbs
     .thumbs-nav
       ol
-        li
-          a(href="#")
-            img(src="https://hexschool.github.io/THE_F2E_Design/week5-comic%20viewer/assets/storyboard-1.png", alt="page image")
-        li
-          a(href="#")
-            img(src="https://hexschool.github.io/THE_F2E_Design/week5-comic%20viewer/assets/storyboard-1.png", alt="page image")
-        li
-          a(href="#")
-            img(src="https://hexschool.github.io/THE_F2E_Design/week5-comic%20viewer/assets/storyboard-1.png", alt="page image")
-        li
-          a(href="#")
-            img(src="https://hexschool.github.io/THE_F2E_Design/week5-comic%20viewer/assets/storyboard-1.png", alt="page image")
-        li
-          a(href="#")
-            img(src="https://hexschool.github.io/THE_F2E_Design/week5-comic%20viewer/assets/storyboard-1.png", alt="page image")
-        li
-          a(href="#")
-            img(src="https://hexschool.github.io/THE_F2E_Design/week5-comic%20viewer/assets/storyboard-1.png", alt="page image")
-        li
-          a(href="#")
-            img(src="https://hexschool.github.io/THE_F2E_Design/week5-comic%20viewer/assets/storyboard-1.png", alt="page image")
-        li
-          a(href="#")
-            img(src="https://hexschool.github.io/THE_F2E_Design/week5-comic%20viewer/assets/storyboard-1.png", alt="page image")
-        li
-          a(href="#")
-            img(src="https://hexschool.github.io/THE_F2E_Design/week5-comic%20viewer/assets/storyboard-1.png", alt="page image")
+        li(v-for="page in chapter.pages")
+          a(href="#", @click.prevent="alertNotImplemented")
+            img(:src="page.img", alt="page image")

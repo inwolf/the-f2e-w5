@@ -9,6 +9,9 @@
 }
 
 .header-title {
+  a {
+    text-decoration: none;
+  }
   .title-3::after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -40,6 +43,12 @@
     min-width: 80px;
     display: block;
     margin: 0 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
   }
   img {
     width: 100%;
