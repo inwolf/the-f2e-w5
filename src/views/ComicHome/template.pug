@@ -1,39 +1,33 @@
 .comic-home.container
   section.comic-info.flex
     .comic-cover
-      img(src="https://hexschool.github.io/THE_F2E_Design/week5-comic%20viewer/assets/comic%20cover.png")
+      img(:src="book.cover")
     .comic-detail
       h1.comic-title.title
-        | MY HEXSCHOOL
+        | {{ book.title | upperCase }}
       .comic-detail-attrs
         .flex
           .subtitle Genres
-          .detail-attr Fusce/vehicula/dolor
+          .detail-attr {{ book.genres | slashedArray }}
         .flex
           .subtitle Author
-          .detail-attr Namae Shiranai
+          .detail-attr {{ book.author }}
         .flex
           .subtitle Status
-          .detail-attr Ongoing
+          .detail-attr {{ book.status }}
         .flex
           .subtitle Rate
           .detail-attr.rate
-            i.fas.fa-star
-            i.fas.fa-star
-            i.fas.fa-star
-            i.fas.fa-star
-            i.far.fa-star
+            i.fas.fa-star(v-for="i in book.rate")
+            i.far.fa-star(v-for="i in 5 - book.rate")
       article.comic-detail-summary
         .subtitle Summary
-        p If your banker breaks, you snap; if your apothecary by mistake sends you poison in your pills, you die. 
-        p Therefore, I say, I saw that this situation of mine was the precise situation of every mortal that has this Siamese connexion with a plurality of other mortals. 
+        p(v-for="item in book.summary") {{ item }}
 
   section.comic-chapters
     .comic-chapters-title
       h2.title-2 All Chapters
     .comic-chapters-container
       ol
-        li
-          a.subtitle(href="#") Chapter 1: The F2E Chanllenge Start!
-        li.new
-          a.subtitle(href="#") Chapter 2: Todo List is Going Crazy!
+        li(v-for="chapter in chapters", :key="chapter.no", :class="{new:chapter.new}")
+          router-link.subtitle(:to="{name:'page', params: {cid:chapter.no, pid:'1'}}") Chapter {{ chapter.no }}: {{ chapter.title }}
